@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="608.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <BorderPane prefHeight="608.0" prefWidth="941.0">
+         <top>
+            <MenuBar fx:id="MenuBarMain" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu fx:id="MenuFile" mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem fx:id="MenuItemNew" mnemonicParsing="false" onAction="#OnNewMenuItemClicked" text="New" />
+                        <MenuItem fx:id="MenuItemOpen" mnemonicParsing="false" onAction="#OnOpenMenuItemClicked" text="Open" />
+                    <MenuItem fx:id="MenuItemClose" mnemonicParsing="false" onAction="#OnCloseMenuItemClicked" text="Close" />
+                        <MenuItem fx:id="MenuItemSave" mnemonicParsing="false" onAction="#OnSaveMenuItemClicked" text="Save" />
+                        <MenuItem fx:id="MenuItemSaveAs" mnemonicParsing="false" onAction="#OnSaveAsMenuItemClicked" text="Save As" />
+                        <MenuItem fx:id="MenuItemSpellCheck" mnemonicParsing="false" onAction="#OnSpellCheckMenuItemClicked" text="Spell-Check" />
+                        <MenuItem fx:id="MenuItemLearn" mnemonicParsing="false" onAction="#OnLearnMenuItemClicked" text="Learn" />
+                        <Menu fx:id="MenuCreate" mnemonicParsing="false" text="Create">
+                          <items>
+                              <MenuItem fx:id="MenuItemFileName" mnemonicParsing="false" text="MenuItemFileName" />
+                              <MenuItem fx:id="MenuItemStartingWord" mnemonicParsing="false" text="Starting Word">
+                                 <graphic>
+                                    <TextField fx:id="TextFieldStartingWord" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem fx:id="MenuItemLength" mnemonicParsing="false" text="Length">
+                                 <graphic>
+                                    <Spinner fx:id="SpinnerLength" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem fx:id="MenuItemGenerate" mnemonicParsing="false" onAction="#OnCreateMenuItemClicked" text="Generate!" />
+                          </items>
+                        </Menu>
+                        <MenuItem fx:id="MenuItemExit" mnemonicParsing="false" onAction="#OnExitMenuItemClicked" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu fx:id="MenuExit" mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem fx:id="MenuItemUndo" mnemonicParsing="false" onAction="#OnUndoMenuItemClicked" text="Undo" />
+                        <MenuItem fx:id="MenuItemWordCount" mnemonicParsing="false" onAction="#OnWordCountMenuItemClicked" text="Word Count" />
+                        <MenuItem fx:id="MenuItemSentenceCount" mnemonicParsing="false" onAction="#OnSentenceCountMenuItemClicked" text="Sentence Count" />
+                        <MenuItem fx:id="MenuItemFleschScore" mnemonicParsing="false" onAction="#OnFleschScoreMenuItemClicked" text="Flesch Score" />
+                  </items>
+                </Menu>
+                  <Menu fx:id="MenuText" mnemonicParsing="false" text="Text">
+                    <items>
+                      <MenuItem fx:id="MenuItemTextSize" mnemonicParsing="false" text="Text Size">
+                           <graphic>
+                              <Spinner fx:id="SpinnerTxtSize" onMouseClicked="#OnSpinnerActivated" />
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="MenuItemFont" mnemonicParsing="false" text="Font">
+                           <graphic>
+                              <ComboBox fx:id="FontComboBox" onAction="#OnFontAction" prefWidth="150.0" />
+                           </graphic>
+                        </MenuItem>
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <TextArea fx:id="TextAreaMain" disable="true" editable="true" onKeyTyped="#TextAreaMainOnTyped" prefHeight="200.0" prefWidth="200.0" wrapText="true" BorderPane.alignment="CENTER" />
+         </center>
+         <bottom>
+            <Pane prefHeight="60.0" prefWidth="941.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="LabelWordCount" layoutX="8.0" layoutY="6.0" prefHeight="17.0" prefWidth="147.0" text="Word Count: 0" />
+                  <Label fx:id="LabelSentenceCount" layoutX="8.0" layoutY="22.0" prefHeight="17.0" prefWidth="166.0" text="Sentence Count: 0" />
+                  <Label fx:id="LabelFleschScore" layoutX="8.0" layoutY="38.0" prefHeight="17.0" prefWidth="162.0" text="Flesch Score: 0" />
+               </children>
+            </Pane>
+         </bottom>
+         <right>
+            <TextArea fx:id="TextAreaInfoDoc" editable="false" prefHeight="523.0" prefWidth="189.0" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>
