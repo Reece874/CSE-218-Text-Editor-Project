@@ -1,5 +1,4 @@
-# CSE-218-Text-Editor-Project
-Project For Data Structures and Algorithms class 
+# Text-Editor-Project
 
 This application allows users to open text files and make edits to them.  Words that are spelled incorrectly will be shown in another window. 
 
