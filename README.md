@@ -4,4 +4,4 @@ This application allows users to open text files and make edits to them.  Words 
 
 The word count and flesch reading ease scores are shown.  
 
-A markov tect generator allows the user to feed the program text which the program will use to try to create sentences out of it using a treemap.   
+A markov text generator allows the user to feed the program text which the program will use to try to create sentences out of it using a treemap.   
